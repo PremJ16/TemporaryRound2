@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
 public class CountryActivity extends AppCompatActivity {
     public Button donebutton;
@@ -28,6 +29,7 @@ public class CountryActivity extends AppCompatActivity {
     StateFragment stateFragment;
     public String stateSelected;
     public String countrySelected;
+    public TextView selectionShow;
 
 
     @Override
@@ -37,9 +39,11 @@ public class CountryActivity extends AppCompatActivity {
         donebutton = (Button) findViewById(R.id.c_donebutton);
         cancelbutton = (Button) findViewById(R.id.c_cancelbutton);
         fragmentFrame = (FrameLayout) findViewById(R.id.fragmentFrame);
+        selectionShow=(TextView)findViewById(R.id.selection_show);
         countryFragment = new CountryFragment();
 
         selection_status=COUNTRY_SELECTION;
+        selectionShow.setText("");
 
 
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();

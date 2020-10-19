@@ -51,8 +51,11 @@ public class StateFragment extends ListFragment implements AdapterView.OnItemCli
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(getActivity(),"Item: "+adapter.getItem(position),Toast.LENGTH_SHORT).show();
-        root_activity.stateSelected=adapter.getItem(position).toString();
+        String state=adapter.getItem(position).toString();
+        String country=root_activity.countrySelected;
+        Toast.makeText(getActivity(),"Item: "+state,Toast.LENGTH_SHORT).show();
+        root_activity.stateSelected=state;
+        root_activity.selectionShow.setText(country+", "+state);
         root_activity.selection_status=CountryActivity.DONE_SELECTION;
     }
 
