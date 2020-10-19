@@ -65,9 +65,11 @@ public static final String LOG_TAG="logtag";
         }
         else if(requestCode==COUNTRY_RQ_CODE){
             Log.i(LOG_TAG, "onActivityResult:in country if ");
-            country=data.getStringExtra(COUNTRY_TAG);
-            state=data.getStringExtra(STATE_TAG);
-            countryState.setText(country+" , "+state);
+            if(data!=null) {
+                country=data.getStringExtra(COUNTRY_TAG);
+                state=data.getStringExtra(STATE_TAG);
+                countryState.setText(country+" , "+state);
+            }
 
         }
     }
