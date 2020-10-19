@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
+
+        android:text="@string/heading"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/FirstName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="20sp"
+        android:text="@string/firstname"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heading" />
+
+    <TextView
+        android:id="@+id/FamilyName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="28sp"
+        android:text="@string/Lastname"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/FirstName" />
+
+    <TextView
+        android:id="@+id/Age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="28sp"
+        android:text="@string/age"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/FamilyName" />
+
+    <TextView
+        android:id="@+id/emailId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="28sp"
+        android:text="@string/email"
+        android:textStyle="bold"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Age" />
+
+    <TextView
+        android:id="@+id/phoneNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="28sp"
+        android:text="@string/Phone"
+
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailId" />
+
+    <TextView
+        android:id="@+id/birthday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="32sp"
+        android:text="@string/BirthDate"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phoneNumber" />
+
+    <TextView
+        android:id="@+id/birthdatevalue"
+        android:layout_width="205dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="20sp"
+        android:background="@drawable/custom_input"
+        android:hint="@string/BirthdateValue"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:visibility="visible"
+        app:layout_constraintStart_toEndOf="@+id/birthday"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPhone"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/setbutton1"
+        android:layout_width="wrap_content"
+        android:layout_height="39dp"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="13sp"
+        android:text="@string/buttonValue"
+        app:layout_constraintStart_toEndOf="@+id/birthdatevalue"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />
+
+    <TextView
+        android:id="@+id/countryname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="31sp"
+        android:text="@string/Country"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/birthday" />
+
+    <TextView
+        android:id="@+id/countryValue"
+        android:layout_width="205dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="25sp"
+        android:layout_marginTop="22sp"
+        android:background="@drawable/custom_input"
+        android:hint="@string/CountryValue"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:visibility="visible"
+        app:layout_constraintStart_toEndOf="@+id/countryname"
+        app:layout_constraintTop_toBottomOf="@+id/birthdatevalue"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/setbutton2"
+        android:layout_width="wrap_content"
+        android:layout_height="39dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="18sp"
+        android:text="@string/buttonValv"
+        app:layout_constraintStart_toEndOf="@+id/countryValue"
+        app:layout_constraintTop_toBottomOf="@+id/setbutton1" />
+
+    <EditText
+        android:id="@+id/FirstNameValue"
+        android:layout_width="205dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/custom_input"
+        android:ems="10"
+        android:hint="@string/Firstnamevalue"
+        android:inputType="textPersonName"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        app:layout_constraintStart_toEndOf="@+id/FirstName"
+        app:layout_constraintTop_toBottomOf="@+id/heading" />
+
+    <EditText
+        android:id="@+id/FamilyLastNameValue"
+        android:layout_width="205dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="14sp"
+        android:background="@drawable/custom_input"
+        android:ems="10"
+        android:hint="@string/lastnamevalue"
+        android:inputType="textPersonName"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        app:layout_constraintStart_toEndOf="@+id/FamilyName"
+        app:layout_constraintTop_toBottomOf="@+id/FirstNameValue" />
+
+    <EditText
+        android:id="@+id/AgeValue"
+        android:layout_width="205dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="15sp"
+        android:background="@drawable/custom_input"
+        android:ems="10"
+        android:hint="@string/ageValue"
+        android:inputType="number"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+
+        app:layout_constraintStart_toEndOf="@+id/Age"
+        app:layout_constraintTop_toBottomOf="@+id/FamilyLastNameValue" />
+
+    <EditText
+        android:id="@+id/EmailValue"
+        android:layout_width="205dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="13sp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/custom_emailonfocussed"
+        android:drawablePadding="12dp"
+        android:ems="10"
+        android:hint="@string/emailvalue"
+        android:inputType="textEmailAddress"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        app:layout_constraintStart_toEndOf="@+id/emailId"
+        app:layout_constraintTop_toBottomOf="@+id/AgeValue" />
+
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="206dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="14sp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/custon_input_0nphonefocussed"
+        android:drawablePadding="12dp"
+        android:ems="10"
+        android:hint="@string/PhoneValue"
+        android:inputType="phone"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        app:layout_constraintStart_toEndOf="@+id/phoneNumber"
+        app:layout_constraintTop_toBottomOf="@+id/EmailValue" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

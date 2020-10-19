@@ -1,0 +1,184 @@
+<resources>
+    <string name="app_name">BasicInformationApp</string>
+    <string name="heading">Basic Information</string>
+    <string name="firstname">First(given) Name </string>
+    <string name="Lastname">Family(last) Name</string>
+    <string name="age">Age</string>
+    <string name="BirthDate">Birthdate</string>
+    <string name="Phone">Phone Number</string>
+    <string name="Country">Country</string>
+    <string name="Firstnamevalue">first name</string>
+    <string name="lastnamevalue">last name</string>
+    <string name="ageValue">age</string>
+    <string name="PhoneValue">phone number</string>
+    <string name="BirthdateValue">Select th birthdate using buttton</string>
+    <string name="email">Email id</string>
+    <string name="emailvalue">Email address</string>
+    <string name="buttonValue">Set</string>
+    <string name="CountryValue">Select the country using button</string>
+    <string name="buttonValv">select</string>
+    <string name="doneButton">Done</string>
+    <string name="cancelButton">Cancel</string>
+    <string-array name="Countries">
+        <item>China</item>
+        <item>India</item>
+        <item>Mexico</item>
+        <item>USA</item>
+    </string-array>
+    <string-array name="StatesChina">
+        <item>Beijing Municipality</item>
+        <item>Tianjin Municipality</item>
+        <item>Hebei</item>
+        <item>Shanxi</item>
+        <item>Inner Mongolia</item>
+        <item>Liaoning</item>
+        <item>Jilin</item>
+        <item>Heilongjiang</item>
+        <item>Shanghai Municipality</item>
+        <item>Jiangsu</item>
+        <item>Zhejiang</item>
+        <item>Anhui</item>
+        <item>Fujian</item>
+        <item>Jiangxi</item>
+        <item>Shandong</item>
+        <item>Henan</item>
+        <item>Hunan</item>
+        <item>Guangdong</item>
+        <item>Guangxi Zhuang</item>
+        <item>Hainan</item>
+        <item>Chongqing Municipality</item>
+        <item>Sichuan</item>
+        <item>Guizhou</item>
+        <item>Yunnan</item>
+        <item>Tibet Autonomous Region</item>
+        <item>Guizhou</item>
+        <item>Shaanxi</item>
+        <item>Gansu</item>
+        <item>Qinghai</item>
+        <item>Ningxia Hui</item>
+        <item>Xinjiang Uyghur</item>
+        <item>Hong Kong</item>
+        <item>Macau</item>
+        <item>Taiwan</item>
+    </string-array>
+    <string-array name="StatesIndia">
+        <item>Andhra Pradesh</item>
+        <item>Arunachal Pradesh</item>
+        <item>Assam</item>
+        <item>Bihar</item>
+        <item>Chhattisgarh</item>
+        <item>Goa</item>
+        <item>Gujarat</item>
+        <item>Haryana</item>
+        <item>Himachal Pradesh</item>
+        <item>Jammu and Kashmir</item>
+        <item>Jharkhand</item>
+        <item>Karnataka</item>
+        <item>Kerala</item>
+        <item>Madhya Pradesh</item>
+        <item>Maharashtra</item>
+        <item>Manipur</item>
+        <item>Meghalaya</item>
+        <item>Mizoram</item>
+        <item>Nagaland</item>
+        <item>Odisha</item>
+        <item>Punjab</item>
+        <item>Rajasthan</item>
+        <item>Sikkim</item>
+        <item>Tamil Nadu</item>
+        <item>Telangana</item>
+        <item>Tripura</item>
+        <item>Uttar Pradesh</item>
+        <item>Uttarakhand</item>
+    </string-array>
+    <string-array name="StatesMexico">
+        <item>Aguascalientes</item>
+        <item>Baja California</item>
+        <item>Baja California Sur</item>
+        <item>Campeche</item>
+        <item>Chiapas</item>
+        <item>Chihuahua</item>
+        <item>Coahuil</item>
+        <item>Colim</item>
+        <item>Durango</item>
+        <item>Guanajuato</item>
+        <item>Guerrero</item>
+        <item>Hidalgo</item>
+        <item>Jalisco</item>
+        <item>México</item>
+        <item>Michoacán</item>
+        <item>Morelos</item>
+        <item>Nayarit</item>
+        <item>Nuevo Leó</item>
+        <item>Oaxaca</item>
+        <item>Puebla</item>
+        <item>Querétaro</item>
+        <item>Quintana Roo</item>
+        <item>San Luis Potosi</item>
+        <item>Sinaloa</item>
+        <item>Sonor</item>
+        <item>Tabasc</item>
+        <item>Tamaulipa</item>
+        <item>Tlaxcala</item>
+        <item>Veracruz</item>
+        <item>Sonor</item>
+        <item>Yucatá</item>
+        <item>Zacatecas</item>
+    </string-array>
+    <string-array name="StatesUSA">
+        <item>Alabama</item>
+        <item>Baja California</item>
+        <item>Alaska</item>
+        <item>Arizona</item>
+        <item>Chiapas</item>
+        <item>Arkansas</item>
+        <item>California</item>
+        <item>Colorado</item>
+        <item>Connecticut</item>
+        <item>Delaware</item>
+        <item>Florida</item>
+        <item>Georgia</item>
+        <item>Hawaii</item>
+        <item>Idaho</item>
+        <item>Illinois</item>
+        <item>Indiana</item>
+        <item>Iowa</item>
+        <item>Kansas</item>
+        <item>Kentucky</item>
+        <item>Louisiana</item>
+        <item>Maine</item>
+        <item>Maryland</item>
+        <item>Massachusetts</item>
+        <item>Michigan</item>
+        <item>Minnesota</item>
+        <item>Mississippi</item>
+        <item>Missouri</item>
+        <item>Montana</item>
+        <item>Nebraska</item>
+        <item>Nevada</item>
+        <item>New Hampshire</item>
+        <item>New Jersey</item>
+        <item>New Mexico</item>
+        <item>New York</item>
+        <item>North Carolina</item>
+        <item>North Dakota</item>
+        <item>Ohio</item>
+        <item>Oklahoma</item>
+        <item>Oregon</item>
+        <item>Pennsylvania</item>
+        <item>Rhode Island</item>
+        <item>South Carolina</item>
+        <item>South Dakota</item>
+        <item>Tennessee</item>
+        <item>Texas</item>
+        <item>Utah</item>
+        <item>Vermont</item>
+        <item>Virginia</item>
+        <item>Washington</item>
+        <item>West Virginia</item>
+        <item>Wisconsin</item>
+        <item>Wyoming</item>
+
+    </string-array>
+
+</resources>
