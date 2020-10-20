@@ -203,19 +203,8 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.menuitem_mainactivity_userslist) {
             //Toast.makeText(getApplicationContext(), "Users List", Toast.LENGTH_SHORT).show();
-            db.collection(USERS).get()
-                    .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                        @Override
-                        public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                            if (task.isSuccessful()) {
-                                for (QueryDocumentSnapshot doc : task.getResult()) {
-                                    Log.i(LOG_TAG, doc.getData().toString());
-                                }
-                            } else {
-                                Log.i(LOG_TAG, "Error in loading Users", task.getException());
-                            }
-                        }
-                    });
+            Intent intent=new Intent(MainActivity.this, UserListAcitivity.class);
+            startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }

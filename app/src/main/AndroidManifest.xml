@@ -9,7 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CountryActivity"
+        <activity
+            android:name=".UserListAcitivity"
+            android:label="Users List"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.basicinformationapp.MainActivity" />
+
+        </activity>
+        <activity
+            android:name=".CountryActivity"
             android:label="countryactivity"
             android:parentActivityName=".MainActivity">
             <meta-data
