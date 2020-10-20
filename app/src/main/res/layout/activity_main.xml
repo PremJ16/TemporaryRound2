@@ -97,6 +97,10 @@
         android:hint="@string/BirthdateValue"
         android:paddingStart="8dp"
         android:paddingEnd="8dp"
+        android:paddingBottom="5dp"
+        android:paddingTop="8dp"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
         android:visibility="visible"
         app:layout_constraintStart_toEndOf="@+id/birthday"
         app:layout_constraintTop_toBottomOf="@+id/editTextPhone"
@@ -133,6 +137,10 @@
         android:hint="@string/CountryValue"
         android:paddingStart="8dp"
         android:paddingEnd="8dp"
+        android:paddingBottom="5dp"
+        android:paddingTop="8dp"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
         android:visibility="visible"
         app:layout_constraintStart_toEndOf="@+id/countryname"
         app:layout_constraintTop_toBottomOf="@+id/birthdatevalue"
@@ -227,6 +235,16 @@
         android:paddingEnd="8dp"
         app:layout_constraintStart_toEndOf="@+id/phoneNumber"
         app:layout_constraintTop_toBottomOf="@+id/EmailValue" />
+
+    <Button
+        android:id="@+id/submitbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45sp"
+        android:text="@string/submitbutton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/countryValue" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

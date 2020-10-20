@@ -18,6 +18,8 @@
     <string name="CountryValue">Select the country using button</string>
     <string name="buttonValv">select</string>
     <string name="doneButton">Done</string>
+    <string name="submitbutton">Submit</string>
+
     <string name="cancelButton">Cancel</string>
     <string-array name="Countries">
         <item>China</item>
