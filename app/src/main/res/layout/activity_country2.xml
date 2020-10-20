@@ -8,13 +8,27 @@
     tools:context=".CountryActivity">
 
 
+    <TextView
+        android:id="@+id/selection_show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="#0A8A0F"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toTopOf="@+id/c_donebutton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/c_cancelbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
         android:text="@string/cancelButton"
         app:layout_constraintEnd_toStartOf="@+id/c_donebutton"
-        app:layout_constraintHorizontal_bias="0.39"
+        app:layout_constraintHorizontal_bias="0.382"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,6 +36,7 @@
         android:id="@+id/c_donebutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
         android:layout_marginEnd="44dp"
         android:text="@string/doneButton"
         app:layout_constraintEnd_toEndOf="parent"

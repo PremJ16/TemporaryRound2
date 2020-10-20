@@ -33,9 +33,12 @@ public class CountryFragment extends ListFragment implements AdapterView.OnItemC
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(getActivity(),"Item: "+adapter.getItem(position),Toast.LENGTH_SHORT).show();
-        root_activity.countrySelected=adapter.getItem(position).toString();
-        root_activity.showStatesFragment(adapter.getItem(position).toString());
+        String country=adapter.getItem(position).toString();
+        Toast.makeText(getActivity(),"Item: "+country,Toast.LENGTH_SHORT).show();
+        root_activity.countrySelected=country;
+        root_activity.selection_status=CountryActivity.STATE_SELECTION;
+        root_activity.selectionShow.setText(country);
+        root_activity.showStatesFragment(country);
 
     }
 
