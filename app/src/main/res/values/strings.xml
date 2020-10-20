@@ -21,6 +21,7 @@
     <string name="submitbutton">Submit</string>
 
     <string name="cancelButton">Cancel</string>
+    <string name="users_list">Users List</string>
     <string-array name="Countries">
         <item>China</item>
         <item>India</item>
