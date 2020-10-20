@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String STATE = "state";
     public static final String COUNTRY_TAG = "countryTag";
     public static final String STATE_TAG = "stateTag";
-    public static final String USERS="Users";
+    public static final String USERS = "Users";
     public static final int COUNTRY_RQ_CODE = 4;
     private String country;
     private String state;
@@ -62,16 +62,30 @@ public class MainActivity extends AppCompatActivity {
         countryState = (TextView) findViewById(R.id.countryValue);
         firstname = (EditText) findViewById(R.id.FirstNameValue);
         lastname = (EditText) findViewById(R.id.FamilyLastNameValue);
+        age = (EditText) findViewById(R.id.AgeValue);
         email = (EditText) findViewById(R.id.EmailValue);
         phoneNo = (EditText) findViewById(R.id.editTextPhone);
         submit = (Button) findViewById(R.id.submitbutton);
-        db= FirebaseFirestore.getInstance();
+        db = FirebaseFirestore.getInstance();
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                saveData();
+                Map<String, String> data = wrapData();
 
+                if (data != null) {
+                    db.collection(USERS).add(data).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                        @Override
+                        public void onSuccess(DocumentReference documentReference) {
+                            Toast.makeText(getApplicationContext(), "Data saved successfully", Toast.LENGTH_SHORT).show();
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(getApplicationContext(), "Failure in saving data", Toast.LENGTH_SHORT).show();
 
+                        }
+                    });
+                }
             }
         });
 
@@ -108,57 +122,66 @@ public class MainActivity extends AppCompatActivity {
             if (data != null) {
                 country = data.getStringExtra(COUNTRY_TAG);
                 state = data.getStringExtra(STATE_TAG);
-                countryState.setText(country + " , " + state);
+                countryState.setText(country + ", " + state);
             }
 
         }
     }
 
-    public void saveData() {
-        boolean validData = true;
-        String fname = firstname.getText().toString();
-        validData = fname.equals("") ? false : validData;
-        String lname = lastname.getText().toString();
-        validData = lname.equals("") ? false : validData;
-        String agevalue = age.getText().toString();
-        validData = Integer.parseInt(agevalue) < 0 ? false : validData;
-        String emailId = email.getText().toString();
-        validData = email.equals("") ? false : validData;
-        String phone = phoneNo.getText().toString();
-        validData = phoneNo.equals("") ? false : validData;
-        String birthdate = birthdateValue.getText().toString();
-        validData = birthdate.equals("") ? false : validData;
-
-        if(validData==true){
-            Map<String, String> data = new HashMap<>();
-            data.put(F_NAME, fname);
-            data.put(L_NAME, lname);
-            data.put(AGE, agevalue);
-            data.put(EMAIL, emailId);
-            data.put(PHONE, phone);
-            data.put(DATE, birthdate);
+    public Map<String, String> wrapData() {
+        Log.i(LOG_TAG, "Inside wrapData()");
+        Map<String, String> data = new HashMap<>();
+        if (firstname.getText() == null || firstname.getText().toString().equals("")) {
+            Toast.makeText(getApplicationContext(), "Error with First Name", Toast.LENGTH_SHORT).show();
+            return null;
+        } else {
+            data.put(F_NAME, firstname.getText().toString());
+        }
+        if (lastname.getText() == null || lastname.getText().toString().equals("")) {
+            Toast.makeText(getApplicationContext(), "Error with Last Name", Toast.LENGTH_SHORT).show();
+            return null;
+        } else {
+            data.put(L_NAME, lastname.getText().toString());
+        }
+        if (age.getText() == null || age.getText().toString().equals("")) {
+            Toast.makeText(getApplicationContext(), "Error with Age", Toast.LENGTH_SHORT).show();
+            return null;
+        } else {
+            data.put(AGE, age.getText().toString());
+        }
+        if (email.getText() == null || email.getText().toString().equals("")) {
+            Toast.makeText(getApplicationContext(), "Error with Email", Toast.LENGTH_SHORT).show();
+            return null;
+        } else {
+            data.put(EMAIL, email.getText().toString());
+        }
+        if (phoneNo.getText() == null || phoneNo.getText().toString().equals("")) {
+            Toast.makeText(getApplicationContext(), "Error with Phone", Toast.LENGTH_SHORT).show();
+            return null;
+        } else {
+            data.put(PHONE, phoneNo.getText().toString());
+        }
+        if (birthdateValue.getText() == null || birthdateValue.getText().toString().equals("")) {
+            Toast.makeText(getApplicationContext(), "Error with Birth Date", Toast.LENGTH_SHORT).show();
+            return null;
+        } else {
+            data.put(DATE, birthdateValue.getText().toString());
+        }
+        if (countryState.getText() == null || countryState.getText().toString().equals("")) {
+            Toast.makeText(getApplicationContext(), "Error with Country and State", Toast.LENGTH_SHORT).show();
+            return null;
+        }
+        if (country == null || country.equals("")) {
+            return null;
+        } else {
             data.put(COUNTRY, country);
-            data.put(STATE,state);
-
-            Log.i(LOG_TAG,data.toString());
-
-            db.collection(USERS).add(data).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                @Override
-                public void onSuccess(DocumentReference documentReference) {
-                   Log.i(LOG_TAG,"Success");
-                }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Log.i(LOG_TAG,"Failure");
-
-                }
-            });
         }
-        else{
-            Toast.makeText(getApplicationContext(),"Invalid Data",Toast.LENGTH_SHORT).show();
-
+        if (state == null || state.equals("")) {
+            return null;
+        } else {
+            data.put(STATE, state);
         }
-
+        Log.i(LOG_TAG, data.toString());
+        return data;
     }
 }
