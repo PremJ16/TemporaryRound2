@@ -5,4 +5,12 @@
         android:id="@+id/menuitem_mainactivity_userslist"
         android:title="@string/users_list"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/menuitem_mainactivity_dobactivity"
+        android:title="@string/birth_date_activity"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menuitem_mainactivity_countryactivity"
+        android:title="@string/country_activity"
+        app:showAsAction="never" />
 </menu>

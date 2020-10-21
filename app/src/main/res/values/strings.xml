@@ -186,5 +186,7 @@
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="birth_date_activity">Birth Date Activity</string>
+    <string name="country_activity">Country Activity</string>
 
 </resources>
