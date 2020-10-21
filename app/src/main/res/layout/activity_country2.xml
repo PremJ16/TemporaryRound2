@@ -46,7 +46,7 @@
         android:id="@+id/fragmentFrame"
         android:layout_width="401dp"
         android:layout_height="572dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="45dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
