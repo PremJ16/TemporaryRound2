@@ -3,6 +3,7 @@ package com.example.basicinformationapp;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -44,6 +45,9 @@ public class MainActivity extends AppCompatActivity {
     public static final String COUNTRY_TAG = "countryTag";
     public static final String STATE_TAG = "stateTag";
     public static final String USERS = "Users";
+    public static final String COUNTRIES = "Countries";
+    public static final String COUNTRY_NAME_TAG="name";
+    public static final String COUNTRY_STATES_TAG="states";
     public static final int COUNTRY_RQ_CODE = 4;
     private String country;
     private String state;

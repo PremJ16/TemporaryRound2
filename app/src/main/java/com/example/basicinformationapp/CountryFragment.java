@@ -14,13 +14,17 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.ListFragment;
 
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class CountryFragment extends ListFragment implements AdapterView.OnItemClickListener {
 
     private ArrayAdapter adapter;
     private CountryActivity root_activity;
+    private ArrayList<String> countriesList;
 
-
+    public CountryFragment(ArrayList<String> countries) {
+        countriesList=countries;
+    }
 
     @Nullable
     @Override
@@ -46,7 +50,7 @@ public class CountryFragment extends ListFragment implements AdapterView.OnItemC
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        adapter= ArrayAdapter.createFromResource(getActivity(),R.array.Countries,android.R.layout.simple_list_item_1);
+        adapter= new ArrayAdapter(getActivity(),android.R.layout.simple_list_item_1, countriesList);
         setListAdapter(adapter);
         getListView().setOnItemClickListener(this);
 
