@@ -10,6 +10,7 @@
     <string name="Firstnamevalue">first name</string>
     <string name="lastnamevalue">last name</string>
     <string name="ageValue">age</string>
+    <string name="State">State</string>
     <string name="PhoneValue">phone number</string>
     <string name="BirthdateValue">Select th birthdate using buttton</string>
     <string name="email">Email id</string>
