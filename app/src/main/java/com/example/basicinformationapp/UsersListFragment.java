@@ -33,11 +33,19 @@ public class UsersListFragment extends ListFragment implements AdapterView.OnIte
         int[] to={R.id.user_name, R.id.user_phone, R.id.user_country};
         adapter=new SimpleAdapter(getActivity().getBaseContext(), usersList, R.layout.userslist_model, from, to);
         setListAdapter(adapter);
+
         return super.onCreateView(inflater, container, savedInstanceState);
     }
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        Intent intent=new Intent(getActivity(), OnclickUserActivity.class);
+        startActivity(intent);
+    }
 
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        getListView().setOnItemClickListener(this);
+        super.onActivityCreated(savedInstanceState);
     }
 }

@@ -9,7 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".OnclickUserActivity"></activity>
+        <activity
+            android:name=".OnclickUserActivity"
+            android:label="Users Details"
+            android:parentActivityName=".UserListAcitivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.basicinformationapp.UserListAcitivity" />
+            </activity>
         <activity
             android:name=".UserListAcitivity"
             android:label="Users List"
