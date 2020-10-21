@@ -54,7 +54,9 @@ DatePicker datePicker;
                 if(validDate==true){
                     String date=Integer.toString(day)+"/"+Integer.toString(month)+"/"+Integer.toString(year);
                     Intent intent=new Intent();
-                    intent.putExtra(MainActivity.DATE_TAG,date);
+                    intent.putExtra(MainActivity.DAY_TAG, day);
+                    intent.putExtra(MainActivity.MONTH_TAG, month);
+                    intent.putExtra(MainActivity.YEAR_TAG, year);
                     setResult(MainActivity.RQ_CODE,intent);
                     finish();
                 }
@@ -68,9 +70,7 @@ DatePicker datePicker;
         cancelbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent();
-                //intent.putExtra(MainActivity.DATE_TAG,date);
-                setResult(MainActivity.RQ_CODE,intent);
+                setResult(MainActivity.RQ_CODE,null);
                 finish();
             }
         });

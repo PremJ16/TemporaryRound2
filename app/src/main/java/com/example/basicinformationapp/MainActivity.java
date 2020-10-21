@@ -3,6 +3,7 @@ package com.example.basicinformationapp;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -25,6 +26,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.time.LocalDate;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -44,9 +47,18 @@ public class MainActivity extends AppCompatActivity {
     public static final String COUNTRY_TAG = "countryTag";
     public static final String STATE_TAG = "stateTag";
     public static final String USERS = "Users";
+    public static final String COUNTRIES = "Countries";
+    public static final String COUNTRY_NAME_TAG = "name";
+    public static final String COUNTRY_STATES_TAG = "states";
+    public static final String DAY_TAG = "day";
+    public static final String MONTH_TAG = "month";
+    public static final String YEAR_TAG = "year";
     public static final int COUNTRY_RQ_CODE = 4;
     private String country;
     private String state;
+    private int day;
+    private int mon;
+    private int yr;
     public static final String LOG_TAG = "logtag";
     public EditText firstname;
     public EditText lastname;
@@ -120,9 +132,25 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == RQ_CODE) {
-            String msg = data.getStringExtra(DATE_TAG);
-            if (msg != null) {
-                birthdateValue.setText(msg);
+            if (data != null) {
+                day = data.getIntExtra(DAY_TAG, 0);
+                mon = data.getIntExtra(MONTH_TAG, 0);
+                yr = data.getIntExtra(YEAR_TAG, 0);
+
+                Calendar calendar = Calendar.getInstance();
+                int currDay = calendar.get(Calendar.DAY_OF_MONTH);
+                int currMon = calendar.get(Calendar.MONTH) + 1;
+                int currYear = calendar.get(Calendar.YEAR);
+                int rawAge = currYear - yr;
+                if (rawAge >= 0) {
+                    if (currMon <= mon && currDay < day) {
+                        rawAge--;
+                    }
+                }
+                age.setText(Integer.toString(rawAge));
+                Toast.makeText(this, "Age updated with Birth Date", Toast.LENGTH_SHORT).show();
+                String date_str = Integer.toString(day) + "/" + Integer.toString(mon) + "/" + Integer.toString(yr);
+                birthdateValue.setText(date_str);
             }
         } else if (requestCode == COUNTRY_RQ_CODE) {
             Log.i(LOG_TAG, "onActivityResult:in country if ");
@@ -139,43 +167,57 @@ public class MainActivity extends AppCompatActivity {
         Log.i(LOG_TAG, "Inside wrapData()");
         Map<String, String> data = new HashMap<>();
         if (firstname.getText() == null || firstname.getText().toString().equals("")) {
-            Toast.makeText(getApplicationContext(), "Error with First Name", Toast.LENGTH_SHORT).show();
+            firstname.requestFocus();
+            Toast.makeText(getApplicationContext(), "First Name is required", Toast.LENGTH_SHORT).show();
             return null;
         } else {
             data.put(F_NAME, firstname.getText().toString());
         }
         if (lastname.getText() == null || lastname.getText().toString().equals("")) {
-            Toast.makeText(getApplicationContext(), "Error with Last Name", Toast.LENGTH_SHORT).show();
+            lastname.requestFocus();
+            Toast.makeText(getApplicationContext(), "Family Name is required", Toast.LENGTH_SHORT).show();
             return null;
         } else {
             data.put(L_NAME, lastname.getText().toString());
         }
         if (age.getText() == null || age.getText().toString().equals("")) {
-            Toast.makeText(getApplicationContext(), "Error with Age", Toast.LENGTH_SHORT).show();
+            age.requestFocus();
+            Toast.makeText(getApplicationContext(), "Age is required", Toast.LENGTH_SHORT).show();
             return null;
         } else {
             data.put(AGE, age.getText().toString());
         }
         if (email.getText() == null || email.getText().toString().equals("")) {
-            Toast.makeText(getApplicationContext(), "Error with Email", Toast.LENGTH_SHORT).show();
+            email.requestFocus();
+            Toast.makeText(getApplicationContext(), "Email is required", Toast.LENGTH_SHORT).show();
             return null;
         } else {
             data.put(EMAIL, email.getText().toString());
         }
         if (phoneNo.getText() == null || phoneNo.getText().toString().equals("")) {
-            Toast.makeText(getApplicationContext(), "Error with Phone", Toast.LENGTH_SHORT).show();
+            phoneNo.requestFocus();
+            Toast.makeText(getApplicationContext(), "Phone is required", Toast.LENGTH_SHORT).show();
             return null;
         } else {
-            data.put(PHONE, phoneNo.getText().toString());
+            String phone=phoneNo.getText().toString();
+            if(phone.length()==10) {
+                data.put(PHONE, phone);
+            } else {
+                phoneNo.requestFocus();
+                Toast.makeText(getApplicationContext(), "Phone Number must have only 10 Digits", Toast.LENGTH_SHORT).show();
+                return null;
+            }
         }
         if (birthdateValue.getText() == null || birthdateValue.getText().toString().equals("")) {
-            Toast.makeText(getApplicationContext(), "Error with Birth Date", Toast.LENGTH_SHORT).show();
+            birthdateValue.requestFocus();
+            Toast.makeText(getApplicationContext(), "Birth Date is required", Toast.LENGTH_SHORT).show();
             return null;
         } else {
             data.put(DATE, birthdateValue.getText().toString());
         }
         if (countryState.getText() == null || countryState.getText().toString().equals("")) {
-            Toast.makeText(getApplicationContext(), "Error with Country and State", Toast.LENGTH_SHORT).show();
+            countryState.requestFocus();
+            Toast.makeText(getApplicationContext(), "Country and State required", Toast.LENGTH_SHORT).show();
             return null;
         }
         if (country == null || country.equals("")) {
