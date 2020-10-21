@@ -29,8 +29,7 @@ public class OnclickUserActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_onclick_user);
-<<<<<<< Updated upstream
-=======
+
 
         fnamedisplayValue=(TextView) findViewById(R.id.fnamedisplayValue);
         lnamedisplayValue=(TextView) findViewById(R.id.lnamedsiplayValue);
@@ -40,7 +39,7 @@ public class OnclickUserActivity extends AppCompatActivity {
         birthdatedisplayValue=(TextView) findViewById(R.id.birthdatedisplayValue);
         countrydisplayValue=(TextView) findViewById(R.id.countrydisplayValue);
         statedisplayValue=(TextView) findViewById(R.id.statedisplayValue);
->>>>>>> Stashed changes
+
 
         fnamedisplayValue = (TextView) findViewById(R.id.fnamedisplayValue);
         lnamedisplayValue = (TextView) findViewById(R.id.lnamedsiplayValue);
