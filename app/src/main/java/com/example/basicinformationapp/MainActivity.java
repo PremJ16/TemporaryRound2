@@ -201,10 +201,20 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.menuitem_mainactivity_userslist) {
-            //Toast.makeText(getApplicationContext(), "Users List", Toast.LENGTH_SHORT).show();
-            Intent intent=new Intent(MainActivity.this, UserListAcitivity.class);
-            startActivity(intent);
+        Intent intent;
+        switch (item.getItemId()) {
+            case R.id.menuitem_mainactivity_userslist:
+                intent = new Intent(MainActivity.this, UserListAcitivity.class);
+                startActivity(intent);
+                break;
+            case R.id.menuitem_mainactivity_dobactivity:
+                intent = new Intent(MainActivity.this, DateActivity.class);
+                startActivityForResult(intent, RQ_CODE);
+                break;
+            case R.id.menuitem_mainactivity_countryactivity:
+                intent = new Intent(MainActivity.this, CountryActivity.class);
+                startActivityForResult(intent, COUNTRY_RQ_CODE);
+                break;
         }
         return super.onOptionsItemSelected(item);
     }
