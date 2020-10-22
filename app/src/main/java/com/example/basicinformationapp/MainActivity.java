@@ -5,8 +5,10 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -59,6 +61,11 @@ public class MainActivity extends AppCompatActivity {
     private int day;
     private int mon;
     private int yr;
+    private String fname;
+    private String lname;
+    private String ageValue;
+    private String emailId;
+    private String phone;
     public static final String LOG_TAG = "logtag";
     public EditText firstname;
     public EditText lastname;
@@ -73,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.i(LOG_TAG, "MainActivity : onCreate");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setbutton = (Button) findViewById(R.id.setbutton1);
@@ -113,6 +121,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, DateActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT|Intent.FLAG_ACTIVITY_REORDER_TO_FRONT|Intent.FLAG_FROM_BACKGROUND);
                 startActivityForResult(intent, RQ_CODE);
             }
         });
@@ -125,7 +134,78 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.i(LOG_TAG, "MainActivity : onStart");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i(LOG_TAG, "MainActivity : onResume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.i(LOG_TAG, "MainActivity : onPause");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i(LOG_TAG, "MainActivity : onStop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i(LOG_TAG, "MainActivity : onDestroy");
+    }
+
+    /*@Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        String fn=firstname.getText()==null?null:firstname.getText().toString();
+        outState.putString(F_NAME, fn);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        if(savedInstanceState.getString(F_NAME)==null) {
+            firstname.setText(savedInstanceState.getString());
+        }
+    }*/
+
+    /*@Override
+    protected void onResume() {
+        super.onResume();
+        if(fname!=null)
+                firstname.setText(fname);
+        if(lname!=null)
+            lastname.setText(lname);
+        if(ageValue!=null)
+            age.setText(ageValue);
+        if(emailId!=null)
+            email.setText(emailId);
+        if(phone!=null)
+            phoneNo.setText(phone);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        fname=firstname.getText()==null?null:firstname.getText().toString();
+        lname=lastname.getText()==null?null:lastname.getText().toString();
+        ageValue=age.getText()==null?null:age.getText().toString();
+        emailId=email.getText()==null?null:email.getText().toString();
+        phone=phoneNo.getText()==null?null:phoneNo.getText().toString();
+    }*/
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
