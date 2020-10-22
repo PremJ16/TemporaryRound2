@@ -37,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
     public Button setbutton;
     public Button selectbutton;
     public static final int RQ_CODE = 2;
+    public static final int USER_TAG = 5;
+
+
     public static final String DATE_TAG = "dateTag";
     public static final String F_NAME = "firstname";
     public static final String L_NAME = "lastname";

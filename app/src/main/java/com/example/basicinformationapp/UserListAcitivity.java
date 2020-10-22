@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.widget.FrameLayout;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -55,4 +56,14 @@ public class UserListAcitivity extends AppCompatActivity {
 
 
     }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+
+
+            finish();
+        }
+        return true;
+    }
+
 }

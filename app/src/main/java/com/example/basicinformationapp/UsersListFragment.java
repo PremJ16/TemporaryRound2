@@ -10,6 +10,7 @@ import androidx.fragment.app.ListFragment;
 
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -59,4 +60,5 @@ public class UsersListFragment extends ListFragment implements AdapterView.OnIte
         getListView().setOnItemClickListener(this);
         super.onActivityCreated(savedInstanceState);
     }
+
 }
